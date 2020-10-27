@@ -1,0 +1,166 @@
+git. 
+
+installation
+télécharger et installer laissez vous guider qu'il disait hahahaha
+
+ouvrir une terminal
+vérification de l'installation git --version
+
+paramètrage initial à faire: définir ton identité ça evitera à chaque modification de dire qui tu es
+git config --global user.name "Baou Baou"
+git config --global user.email "baoubaou@test.test"
+
+
+creation d'un nouveau projet
+créer une répertoire
+mkdir newproject
+
+se deplacer dans la répertoire 
+cd newproject
+
+initialisation
+initialiser git dans le projet pour pouvoir l'utiliser 
+git init
+
+une fois initialisé, on peut demander un statu global du projet pour savoir où on en est 
+git status
+
+prendre une photo des fichiers (enregistrement)
+1. sélection des fichiers
+git add fileName
+2. photo des fichiers (enregistrement)
+git commit -m "first commit"
+
+après plusieurs commit
+historique par ordre chronologique (du plus récent au plus ancien)
+time line des commits
+git log
+
+permet de gagner une certaine souplesse dans la modification du projet. 
+notion de branches
+comme une copie de ton projet initial pour pouvoir travailer sur plusieurs... lol ts haiko n manazava azy
+création d'une branche:
+git branch NomBranche
+
+lister les branches
+git branch
+
+il y a le branche master: branche principal 
+
+misy maitso maitso le misy antsika zao
+pour changer de branche:
+git checkout NomBranche
+
+rapatrier dans la branche principale
+3étapes
+1.basculer vers la branche qui va recevoir ses modifications c-a-d la branche master git checkout master
+2.fusionner les commits: git merge NomBranche (le branche nanaovana modification tiana atambatra am'le principal)
+3.suppression de la branche: git branch -d NomBranche (facultative)
+
+
+colaboration avec les autres 
+dépot distant
+github
+créer un compte
+créer une repository (dépot) (misy interface graphique)
+public azo jeren'ol reetra f privée izy payant create repository
+
+associer ce dépots distant à notre dépot local (créer un pont entre les deux pour envoyer le projet)
+git remote add origin https://github.com/... (--URLduDepot que github a créé)
+(omeny ao le url f izy kou tsara fanah b)
+
+git remote 
+à tout moment tu peux vérifier les dépots distants de ton projet  
+
+déposer le projet. 
+commande générique
+git push origin master
+*origin: label du dépot
+*master nom de la branche à déposer
+
+rah haka projet amzay ar d aon?
+se connecter au dépot 
+git remote add origin https://github.com/...
+rapatrier tout le projet du dépot distant vers le dépot local
+git pull origin master
+*origin: label du dépot
+*master nom de la branche à récupérer
+
+permettre à tes collaborateurs d'écrire dans ton projet. 
+seetings -- collaborators -- add collaborators (ol mila manana compte github izay omena accès en écriture)
+
+........................................................
+
+vidéo 2 
+
+qu'est ce que git
+Version Control System (VCS)
+traces les différentes mise à jour apporté à un projet
+
+git et git hub
+git= outil qui permet de gérer nos projets
+github= la plateforme qui permet d'heberger ces différents projets
+
+raisons d'apprendre git
+1. collaboration
+2. historique des différentes versions
+3. developpement en parallèle (branch)
+
+enlever un fichier du prè sauvegarde
+git rm --cached nomFichier
+
+sélectionner tout les ficher du dossier
+git add .
+sélectionner tous les fichiers se terminant par .html et .css
+git add *.html *.css
+
+supprimer un dossier
+git rm -r --cached nomdossier
+-r pour supprimer récursivement tous les dossiers à l'interieur
+
+la commande checkout
+1 permet de faire un retout en arrière (ref mbol ts ncommitena ngamb)
+checkout -- . 
+
+à chaque commit ou merge toujours laisser un commentaire pour qu'il y ait un trace de votre changement
+
+création d'un fichier .gitignore
+ao anatin'io liste de dossier ou fichier que git devrait ignorer (na manova zavaatra am'le fichier ar d ts hitan git)
+touch .gitignore
+soratana ao am'le fichier ny listen'le zavtra tina ignorena
+git add .gitignore
+git commit 
+normalement tokony ts rahrahiny tson iny fichier nosoratana tao am le gitignore iny
+
+touch README.md (markdown)
+asina n mombamomba n appli ohatra
+add commit
+
+cas où on pert notre projet
+github repository clone or download récupérer le lien qui s'y trouve
+manokatra gitbash amn birao ohatra
+git clone https://github.com/... (ilay lien nalaina tary am github)
+......................................................
+
+vidéo 3 (les bases de git hon graven hono, otrn le feon'le bandy am lama faché iny)
+animé b kou ty zan
+
+git add -A manao ajout reetraretra kou
+
+créer un nouvel branche
+git branche dev
+se déplacer vers la branche
+git checkout dev
+envoyer la nouvelle branche sur le dépot en ligne
+git push --set-upstream origin dev
+
+git fecht maka n retraretra 
+git checkout dev 
+
+tena oe débutant marina
+......................................................
+
+vidéo 4 4mn
+clonage pour la première fois? mila login le any am github n soratana eo lol
+git clone URL
+......................................................
