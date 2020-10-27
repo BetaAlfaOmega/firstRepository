@@ -1,0 +1,26 @@
+Linux, les commandes du terminal
+Rudi Bruchez
+
+terminale
+ls liste
+cd deplacement
+df -h taille des partitions
+
+manuelle, 
+ex: man ls 
+
+shell: coquille vous permet d'interagir avec le systeme
+programme le noyau linux
+
+- echo $0 qui me dit qui je suis
+
+bash: bourne again shell (interpreteur de commande)
+cshel tcsh
+
+karazan hita ao amn /bin/
+
+nom de compte at nom d machine
+
+linux variante de unix
+
+revenir dans home : cd tsotra fotsn

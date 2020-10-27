@@ -1,0 +1,357 @@
+Html (hyperText Markup Language)
+base des sites internet
+n'est pas un langage de programmation
+langage pour structurer un document
+définir les différents élément qui compose la page
+
+CSS style
+javascript interactions
+
+
+syntaxe
+balises, taghtml
+balises ouvrante ex; <p> indique début du paragraphe
+balises fermante ex: </p> indique la fin du paragraphe
+
+élément html: <p> paragraphe </p>
+
+doc: developper.mozilla.org
+
+Attibut
+ex: <p class="important"> paragraphe </p>
+
+éléments imbriqués
+<p> salut <strong> toi </strong> ca va? </p>
+
+éléments vides
+qui n'ont pas besoin de texte
+qui n'a pas besoin d'être fermer
+<img src="img/moi.png" alt="za">
+src: chemin vers l'image
+alt: que représente l'image
+..........................................;
+structure d'une page web
+
+<!DOCTYPE html> // herité d'une ancienne version de html, specier les règles appliqués au document, version 5 de html
+<html>// racine qui entoure toute la page
+	<head> // définir des informations sur la page web (qui a écrit la page, le titre de la page, l'encodage utilisé, une description pour les moteurs de recherche)
+	des élément qui ne sont pas forcement déstinés à être visible à l'ecran
+		<meta charset="utf-8">
+		<title> ma page </title>
+	</head>
+	<body>// corps de notre page web, contenu, 
+	visible par l'utilisateur
+		<p> html ray </p>
+	</body>
+
+</html>
+
+..................................................
+
+pour ecrire du html
+
+éditeur de texte:
+bloc note
+autre ide: permet la coloration syntaxique, eviter de faire des erreur
+autocompletion, permet d'aller un petit peu plus vite
+
+...................................................
+ l'entête
+ <head></head>
+
+les métadonnées du document
+
+<title>text</title> :  titre de la page, ce qui s'affiche au niveau de la bar de navigation, titre de vos onglets
+importance: permet aux utilisateurs de savoir rapidement avec plusieur onglets sur quel page il est
+utilisé par les moteurs de recherche
+mettre quelque chose qui aie du sens 
+qui décrive votre page web d'une manière assez courte
+
+<meta > : 
+élément vide
+peut prendre différents attibuts
+	charset="UTF-8" : définir l'encodage de la page
+	name="description" content="description an'le izy hohitan moteur de recherche" : fonctionne de paire, permet aux gens de comprendre de quoi il en retourne sur votre siten brief pas de long text
+	name="author" content="bao"
+	refer, 
+
+	** langue <html lang="fr">// spécifier la langue
+
+<link> :
+élément vide
+permet de faire le lien vers une ressource externe à votre page
+exemple:lien vers le css, définir la fav icon que vous allez utilisé, icon qui se trouve en haut à gauche 
+
+attributs:
+	href="" url de la ressource liée, chemin vers l'image de l'icone, le fichier css
+	rel="": permet de dire le type de lien sur le quel on est ex: si c'est du css rel="stylesheet  " 
+
+<script></script>: mettre directement du javascript
+<style></style>: mettre directement du css
+
+....................................................
+
+6. l'encodage
+
+table
+ASCII american standard Code for information Interchange
+0 à 127
+
+windows 1252 (ce qu'utilise le bloc note)
+
+problème: le navigateur ouvre le fichier avec un encodage particulier (table particulière) 
+si la table ne correspond pas à la table qui a été utilisé pour écrire le fichier => problème de correspondance
+
+navigateur lit en utf-8 
+éditeur écrit en utf-8
+
+
+utf-8???
+
+unicode table géante qui contient tout les caractères du monde entier
+
+nombre dynamique d'octet suivant les caractères à représentés
+
+solution, utiliser les premiers bits n'un octet
+si octet commence par 110 => caractère représenté en 2 octet il faudra lire l'octet suivant qui aura des bit de continuation 10
+si 111 lire 3 octet
+si 1111 lire 4 octet et ainsi de suite 
+
+enlever ensuit le 110 et le bit de continuation 10.
+ç: 11000011 10100111
+	00011100111 convertir en valeur décimal 231
+
+permet d'avoir un système dynamique qui permet de représenter une quasi infinité de caractère en ayant un nombre d'octet dynamique
+.......................................................
+
+<body></body>
+
+titre: <h1> premier niveau (ngeza)
+		<h2>
+		<h3>
+		<h4>
+		<h5>
+
+paragraphe: <p></p>
+
+html ignore les sauts de ligne
+à la ligne: <br> ou <br/>(tam taloh)
+
+formatage de texte:
+<strong></strong> texte en gras, (texte plus important que le reste du texte, signification sémentique)
+<em></em> emphase, texte en italique
+
+taloh
+<b></b> bolt
+<i></i> italique
+<u></u> souligné
+
+liste:  
+<ul> liste non ordonnée (unordered list)
+	<li></li> (list item)
+</ul>
+liste à puce
+
+<ol> (ordered list)
+	<li></li>
+</ol>
+liste avec des étapes, 1. 2. 3
+
+imbriquer des listes mety fona.
+
+<pre></pre> représenter du texte préformaté
+respect le formatage, tout les espaces vont être conservé et tous les saut de ligne
+
+<hr> balise vide, changement de thématique
+séparateur horizontal
+
+
+
+problème: ecrire par exemple 
+<p> pour écrire un titre utiliser <h1></p>
+
+système d'entité: 
+caractère réservés
+& &amp;
+< &lt; 
+> &gt; (greater than)
+" &quot;
+espace inséquable &nbsp;
+
+sémantique du texte en ligne
+qui vont entourer du texte et pas forcement un bloc de texte
+strong, em
+<sup></sup> exposant
+<br>
+.................................................
+
+les liens entre les pages
+lien hypertext permet de faire la jointure entre deux pages
+<a></a> comme ancre
+attribut 
+href="" url vers le fichier qu'on souhaite appeler
+dans un même niveau: menu.html
+dans un dossier: menu/entre1.html
+revenir en arrière: ../menu.html
+
+href="https://www.grafikart.fr/": lien externe
+permet d'aller sur un autre site
+protocole, non de domaine, chemin
+
+target="_blank"
+charger dans un nouveau context de navigation, nouvelle page, nouvelle onglet
+permet de définir comment va s'ouvrir le lien
+page d'accueil: nommer index.html
+
+lorsqu'on met en ligne notre site on va plutot travailler avec des liens absolues, qui commence par "/"
+
+les liens internes (ancres)
+href="#cuisine" faire un lien vers une partie spécifique de la page web, accéder à un élément particulier
+
+attibut: id="cuisine" permet de donner un identifiant à un élément 
+id est unique
+deux éléments ne peut pas avoir dans une même page le même id.
+
+à mettre sur l'élément ciblé
+
+on peut ajouter
+href="menu.html#platchaud" chemin tsotra, le zavatr tina ho hita
+
+attibut:
+title="" va être visible lorsqu on survolera le lien
+.................................................
+images
+
+ajouter des images
+
+<img src="chemin vers le fichier image" alt="permet d'écrire ce qui est sensé afficher notre image, important si il y a un problème avec le chargement de l'image ça va permettre au navigateur d'afficher un text permettant à l'utilisateur de savoir ce que représente l'image, problème d'accessibilité pour les personne qui ont des déficiences visuel et qui ne peuvent pas forcement voir votre site sur un écran, ils utilisent quelque chose qui va lire l'écran, ce quelque chose va lire le alt">
+
+les formats 
+pour les images photos
+.jpg .jpeg
+pensez à redimensionner l'image pour avoir un format qui est plus adapté pour le web 
+
+pour les logos
+.png supporte la transparence. meilleur qualité, meilleur taille (maivana)
+.svg idéal. il conserve les différentes formes directement dans le fichier, forme très réduit
+pour le .svg pas besoin de redimensionner
+
+pour les animations
+.gif format qui supporte l'animation
+
+nouveau dossier img
+
+attribut
+width="" largeur valeur en pixel
+height="" hauteur
+
+astuce ne mettre que l'un et il adaptera pour que l'autre corresponde
+
+on peut faire un lien
+<a href="image/image.jpg" target="_blank">
+	<img src="" alt="">
+</a>
+...................................................
+
+tableau:
+<table>
+	<tr> permet de creer une nouvelle ligne au sein de notre tableau
+		<td></td> représente une nouvelle cellule dans le tableau
+	</tr> 
+</table> 
+
+au niveau d'un tableau il faut toujours que le nombre de colonne soit toujours le même
+
+attribut td colspan="2" indique le nombre de colonne qu'il occupe, étend sur plusieur colonne 
+rowspan="" comme colspan étendre la cellule sur plusieur lignes, manambatra ligne 2. le ligne ao ambany miena ray n coloneny??? 
+
+pour mieu indiquer le sens de vos éléments
+<thead></thead> ensemble de ligne qui va servir d'entête à nos colonnes
+<tbody></tbody> 
+<tfoot></tfoot>
+
+<thead>
+	<tr>
+		<th></th> cellule d'un tableau qui est définit comme une céllule d'entête ex plat, prix, nomplat. style par défaut: centré et gras.
+		<td></td> cellule de base, contenu
+	</tr>
+</thead>
+..................................................
+11
+<iframe></iframe>
+afficher une page dans une page. 
+
+attributs:
+src="" url de la page à afficher
+width=""
+height="" dimension
+frameborder="0" bordure
+allow="autoplay; encrypted-media" autoplay: autorise l'élément à se lire automatiquement. encrypted-media:pour les flux qui doivent être chiffré
+allowfullscreen :permet d'autoriser le plein écran
+
+très utilisé pour insérrer des contenus multimedia sur le site
+ex: carte qui vienne de google map, des twits dans twiter ce genre de chose, vidéo youtube
+
+le lien à l'interieur de l'iframe ne se rechargent qu'à l'intérieur de l'iframe
+attribut:
+dans les liens
+target="_parent" permet de ne pas recharger à l'interieur de l'iframe
+
+tout les sites ne peut pas autoriser le iframe
+par mesure de sécurité
+
+partager: intégrer 
+.......................................................
+12.
+élements qui n'ont pas forcement de particularité d'un point de vue style
+les éléments ne vont pas inffluencer l'apparence
+utilisé assez souvent surtout lorsqu'on fera du css
+<div></div> élément qui permet de diviser du contenu mais qui n'a pas forcement de sens d'un point de vue sémantique 
+utilisé par d'autre langage comme css ou js
+mettre une division au sein d'un text
+
+<span></span> pour entourer quelque mots
+conteneur générique en ligne pour des contenues phrasées
+
+différence entre les deux
+par défaut une span ne va rien changer à votre texte
+le div va créer, entourer des bloc  
+les span vont entourer des mots ou des phrases
+
+<article> permet de représenter un article
+<nav> elément de section de navigation (menu)
+<header> groupe de contenu qui aide à la navigation, entête
+<footer> pied de page
+<section> représente une section générique de document
+ex: groupe de contenu thématique, une séction est une thématique particulière
+......................................................
+les outils autour de la création de fichier html
+
+l'inspecteur:
+directement accessible 
+clic droit sur la page
+examiner l'élément ou insecter l'élément
+
+onglet élément:
+permet de voir le code html de votre page
+permet d'identifier les problèmes au niveau des pages web
+
+onglet console:
+généralement utilisé pour affiché des érreur javascripts
+afficher des informations sur certains éléments
+des éléments qui ne s'affiche pas convenablement ex: iframe
+
+possibilité de modifier les codes
+permet de faire des éssaie rapidement et pour pouvoir vérifier certain chose
+test
+sans modifier le site, dans les fichier html
+ex: taille de l'image
+......................................................
+le W3C
+
+c'est un organisme qui est chargé de gérer les standards liés au web
+éditer des standard pour l'évolution de différent langage lié au web
+
+
+
+
